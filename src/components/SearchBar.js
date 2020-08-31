@@ -1,22 +1,17 @@
 import React, {useState, useEffect} from 'react';
+import {TextField} from '@material-ui/core'
 
 function SearchBar() {
   const [text, setText] = useState('');
 
-  useEffect(() => {
-    console.log(text)
-  }, [text])
-
   return (
-    <div>
-      <form onSubmit={event => event.preventDefault()}>
-        <input
-          type="text"
-          placeholder="Search movies"
-          name="searchbar"
-          value={text}
-          onChange={event => setText(event.target.value)}
-        />
+    <div className="search-container">
+      <form 
+        className="search-bar--form" 
+        onSubmit={event => event.preventDefault()}
+        autoComplete="off"
+      >
+        <TextField />
       </form>
     </div>
   );
