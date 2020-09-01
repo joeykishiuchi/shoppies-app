@@ -1,9 +1,11 @@
-import React, {useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import './App.scss';
 import SearchBar from './SearchBar.js';
+import Results from './Results.js';
 import axios from 'axios';
 
 function App() {
+  const [results, setResults] = useState([]);
 
   useEffect(() => {
     axios({
@@ -14,14 +16,15 @@ function App() {
       }
     })
     .then(res => {
-      console.log(res.data.Search);
+      setResults(res.data.Search);
     })
   },[]);
 
   return (
     <div className="App">
-      <h1 classname="main-header">The Shoppies</h1>
+      <h1 className="main-header">The Shoppies</h1>
       <SearchBar />
+      <Results results={results}/>
     </div>
   );
 }
