@@ -1,6 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap");
 
-body, root {
-  margin: 0;
-  width: 100%
+$offwhite: #fbf7ed;
+
+html {
+  height: 100%;
+
+  body, root {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $offwhite;
+  }
 }

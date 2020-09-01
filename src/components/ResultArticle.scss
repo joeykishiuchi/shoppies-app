@@ -1,11 +1,11 @@
 $main-font: 'Roboto', sans-serif;
 
 .article-container {
-  border: 1px solid black;
+  border-top: 1px solid white;
   display: flex;
   flex-direction: row;
-  justify-items: flex-start;
-  padding: 0.5em;
+  padding: 1em;
+  width: 90%;
 
   .article-poster {
     width: 3em;
@@ -14,10 +14,13 @@ $main-font: 'Roboto', sans-serif;
   .article-description {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     margin-left: 1em;
+    color: white;
 
     .article-title {
       font-family: $main-font;
+      text-align: start;
     }
   
     .article-year {
@@ -27,5 +30,10 @@ $main-font: 'Roboto', sans-serif;
 
   .MuiButtonBase-root {
     margin-left: auto;
+    background-color: #dba709;
+
+    &:hover {
+      background-color: #f0c543;
+    }
   }
 }
