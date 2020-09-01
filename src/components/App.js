@@ -13,7 +13,9 @@ function App() {
       method: 'GET',
       url: `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}`,
       params: {
-        s: searchTerm
+        s: searchTerm,
+        type: 'movie',
+        plot: 'full'
       }
     })
     .then(res => {
