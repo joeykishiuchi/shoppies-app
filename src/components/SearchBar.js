@@ -1,9 +1,13 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {TextField} from '@material-ui/core'
 import './SearchBar.scss';
 
-function SearchBar() {
+function SearchBar({onSearch}) {
   const [text, setText] = useState('');
+
+  useEffect(() => {
+    onSearch(text);
+  }, [text])
 
   return (
     <div className="search-container">
