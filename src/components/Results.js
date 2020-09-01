@@ -3,7 +3,7 @@ import './Results.scss';
 import ResultArticle from './ResultArticle.js';
 
 function Results(props) {
-  return(
+  return (
     <div className="results-main">
       <span className="results-title">Results</span>
       <div className="results-container">
@@ -14,8 +14,10 @@ function Results(props) {
               <ResultArticle 
                 key={movie.imdbID} 
                 movie={movie}
+                results={props.results}
                 nominations={props.nominations}
                 setNominations={props.setNominations}
+                isNominated={props.nominations.includes(movie)}
               />
             );
           })

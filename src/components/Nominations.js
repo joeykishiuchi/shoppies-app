@@ -11,10 +11,10 @@ function Nominations(props) {
           ? <></>
         : props.nominations.map(movie => {
           return(
-            <NominationArticle 
+            <NominationArticle
               key={movie.imdbID}
-              title={movie.Title} 
-              year={movie.Year} 
+              title={movie.Title}
+              year={movie.Year}
             />
           )})
         }

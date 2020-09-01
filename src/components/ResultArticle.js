@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './ResultArticle.scss';
 import {Button} from '@material-ui/core';
 
@@ -14,6 +14,7 @@ function ResultArticle(props) {
         variant="contained" 
         color="primary"
         onClick={() => {props.setNominations(nominations => [...nominations, props.movie])}}
+        disabled={props.isNominated}
       >Nominate</Button>
     </li>
   );
