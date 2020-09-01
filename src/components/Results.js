@@ -9,7 +9,7 @@ function Results({results}) {
       <div className="results-container">
       {results.map(movie => {
         return(
-          <Article movie={movie}/>
+          <Article key={movie.imdbID} movie={movie}/>
         );
       })}
       </div>
