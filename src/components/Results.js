@@ -1,13 +1,8 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import './Results.scss';
 import ResultArticle from './ResultArticle.js';
 
 function Results(props) {
-
-  useEffect(() => {
-    console.log("NOMS",props.nominations);
-  },[props.nominations])
-
   return (
     <div className="results-main">
       <span className="results-title">Results</span>

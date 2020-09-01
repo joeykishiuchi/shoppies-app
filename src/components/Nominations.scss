@@ -1,0 +1,15 @@
+$main-font: 'Roboto', sans-serif;
+
+.nominations-main {
+  background-color: #bfbfbd;
+  padding: 1em;
+  margin-top: 1em;
+
+  .nominations-title {
+    font-family: $main-font;
+  }
+
+  .nominations-container {
+    padding-left: 0;
+  }
+}

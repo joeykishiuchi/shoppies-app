@@ -1,12 +1,13 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import NominationArticle from './NominationArticle.js';
+import './Nominations.scss';
 
 function Nominations(props) {
 
   return (
     <div className="nominations-main">
-      <span>Nominations</span>
-      <div className="nominination-container">
+      <span className="nominations-title">Nominations</span>
+      <ul className="nominations-container">
         {props.nominations === undefined || props.nominations.length === 0
           ? <></>
         : props.nominations.map(movie => {
@@ -18,7 +19,7 @@ function Nominations(props) {
             />
           )})
         }
-      </div>
+      </ul>
     </div>
   );
 };

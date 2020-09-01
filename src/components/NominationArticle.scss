@@ -1,0 +1,26 @@
+$main-font: 'Roboto', sans-serif;
+
+.nomination-container {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em;
+  border: 1px solid black;
+
+  .nomination-description {
+    display: flex;
+    flex-direction: column;
+
+
+    .nomination-title {
+      font-family: $main-font;
+      font-weight: 300;
+
+    }
+  
+    .nomination-year {
+      font-family: $main-font;
+      font-weight: 300;
+    }
+  }
+}
