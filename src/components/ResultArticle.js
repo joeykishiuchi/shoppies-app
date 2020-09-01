@@ -1,8 +1,8 @@
 import React from 'react';
-import './Article.scss';
+import './ResultArticle.scss';
 import {Button} from '@material-ui/core';
 
-function Article(props) {
+function ResultArticle(props) {
   return(
     <li className="article-container">
       <img className="article-poster" alt="movie-poster" src={props.movie.Poster === "N/A" ? 'images/no_image_found.jpg' : props.movie.Poster}></img>
@@ -19,4 +19,4 @@ function Article(props) {
   );
 };
 
-export default Article;
+export default ResultArticle;

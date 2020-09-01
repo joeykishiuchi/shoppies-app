@@ -1,6 +1,6 @@
 import React from 'react';
 import './Results.scss';
-import Article from './Article.js';
+import ResultArticle from './ResultArticle.js';
 
 function Results(props) {
   return(
@@ -11,7 +11,7 @@ function Results(props) {
         ? <></>
         : props.results.map(movie => {
             return(
-              <Article 
+              <ResultArticle 
                 key={movie.imdbID} 
                 movie={movie}
                 nominations={props.nominations}
