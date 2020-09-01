@@ -1,9 +1,16 @@
+$main-font: 'Roboto', sans-serif;
+$green: #004c3f;
+$offwhite: #fbf7ed;
+
 .results-main {
-  background-color: #bfbfbd;
+  background-color: $green;
   padding: 1em;
+  width: 60vw;
+  display: flex;
+  justify-content: flex-start;
 
   .results-title {
-
+    font-family: $main-font;
   }
 
   .results-container {

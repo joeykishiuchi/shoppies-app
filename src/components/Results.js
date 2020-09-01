@@ -6,7 +6,7 @@ function Results(props) {
   return (
     <div className="results-main">
       <span className="results-title">Results</span>
-      <div className="results-container">
+      <ul className="results-container">
         {props.results === undefined || props.results.length === 0
         ? <></>
         : props.results.map(movie => {
@@ -21,7 +21,7 @@ function Results(props) {
             );
           })
         }
-      </div>
+      </ul>
     </div>
   );
 };

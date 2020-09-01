@@ -29,15 +29,17 @@ function App() {
     <div className="App">
       <h1 className="main-header">The Shoppies</h1>
       <SearchBar onSearch={term => setSearchTerm(term)}/>
-      <Results 
-        results={results}
-        nominations={nominations}
-        setNominations={setNominations}
-      />
-      <Nominations
-        nominations={nominations}
-        setNominations={setNominations}
+      <div className="main-container">
+        <Results 
+          results={results}
+          nominations={nominations}
+          setNominations={setNominations}
         />
+        <Nominations
+          nominations={nominations}
+          setNominations={setNominations}
+          />
+      </div>
     </div>
   );
 }
