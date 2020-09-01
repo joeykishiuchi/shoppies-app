@@ -3,6 +3,17 @@ import './ResultArticle.scss';
 import {Button} from '@material-ui/core';
 
 function ResultArticle(props) {
+
+  const isMovieNominated = (nominations, movie) => {
+    let nominated = false;
+    nominations.map(nomination => {
+      if (nomination.Title === movie.Title) {
+        nominated = true;
+      }
+    })
+    return nominated;
+  };
+
   return(
     <li className="article-container">
       <img className="article-poster" alt="movie-poster" src={props.movie.Poster === "N/A" ? 'images/no_image_found.jpg' : props.movie.Poster}></img>
@@ -14,7 +25,7 @@ function ResultArticle(props) {
         variant="contained" 
         color="primary"
         onClick={() => {props.setNominations(nominations => [...nominations, props.movie])}}
-        disabled={props.isNominated}
+        disabled={isMovieNominated(props.nominations, props.movie)}
       >Nominate</Button>
     </li>
   );
