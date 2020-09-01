@@ -10,7 +10,7 @@ export default function useDebounce(term, ms) {
     }, ms);
 
     return () => clearTimeout(timeout);
-  },[term])
+  },[term, ms])
 
   return debounced;
 };
