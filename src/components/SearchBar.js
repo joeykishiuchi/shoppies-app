@@ -1,13 +1,15 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import {TextField} from '@material-ui/core'
 import './SearchBar.scss';
 
-function SearchBar({onSearch}) {
-  const [text, setText] = useState('');
+function SearchBar(props) {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const onSearch = useCallback(props.onSearch, [searchTerm])
 
   useEffect(() => {
-    onSearch(text);
-  }, [text])
+    onSearch(searchTerm);
+  }, [searchTerm, onSearch])
 
   return (
     <div className="search-container">
@@ -19,8 +21,8 @@ function SearchBar({onSearch}) {
         <TextField 
           placeholder="Search Movies"
           variant="outlined"
-          value={text}
-          onChange={event => setText(event.target.value)}
+          value={searchTerm}
+          onChange={event => setSearchTerm(event.target.value)}
         />
       </form>
     </div>
