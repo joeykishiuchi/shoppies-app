@@ -50,7 +50,10 @@ function App() {
         nominations={nominations}
         setNominations={setNominations}
       />
-      <Nominations nominations={nominations}/>
+      <Nominations
+        nominations={nominations}
+        setNominations={setNominations}
+        />
     </div>
   );
 }

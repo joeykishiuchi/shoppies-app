@@ -14,8 +14,9 @@ function Nominations(props) {
           return(
             <NominationArticle
               key={movie.imdbID}
-              title={movie.Title}
-              year={movie.Year}
+              movie={movie}
+              nominations={props.nominations}
+              setNominations={props.setNominations}
             />
           )})
         }
