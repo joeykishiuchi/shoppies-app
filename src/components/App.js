@@ -8,22 +8,7 @@ import axios from 'axios';
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
   const [results, setResults] = useState([]);
-  const [nominations, setNominations] = useState([
-    {
-      Poster: "https://m.media-amazon.com/images/M/MV5BMTY4MTUxMjQ5OV5BMl5BanBnXkFtZTcwNTUyMzg5Ng@@._V1_SX300.jpg",
-      Title: "Mission: Impossible - Ghost Protocol",
-      Type: "movie",
-      Year: "2011",
-      imdbID: "tt122938"
-    },
-    {
-      Poster: "https://m.media-amazon.com/images/M/MV5BMTY4MTUxMjQ5OV5BMl5BanBnXkFtZTcwNTUyMzg5Ng@@._V1_SX300.jpg",
-      Title: "Mission: Impossible - Ghost Protocol",
-      Type: "movie",
-      Year: "2011",
-      imdbID: "tt1229238"
-    }
-  ])
+  const [nominations, setNominations] = useState([])
 
   useEffect(() => {
     axios({
@@ -36,7 +21,6 @@ function App() {
       }
     })
     .then(res => {
-      console.log(res.data.Search);
       setResults(res.data.Search);
     })
   },[searchTerm]);

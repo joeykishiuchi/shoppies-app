@@ -16,7 +16,12 @@ function ResultArticle(props) {
 
   return(
     <li className="article-container">
-      <img className="article-poster" alt="movie-poster" src={props.movie.Poster === "N/A" ? 'images/no_image_found.jpg' : props.movie.Poster}></img>
+      <img 
+        className="article-poster"
+        alt="movie-poster"
+        onError={event => event.target.src = 'images/no_image_found.jpg'}
+        src={props.movie.Poster}
+      ></img>
       <div className="article-description">
         <span className="article-title">{props.movie.Title}</span>
         <span className="article-year">{props.movie.Year}</span>
