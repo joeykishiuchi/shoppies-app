@@ -12,5 +12,5 @@ export default function useDebounce(term, ms) {
     return () => clearTimeout(timeout);
   },[term])
 
-  return debounce;
+  return debounced;
 };
