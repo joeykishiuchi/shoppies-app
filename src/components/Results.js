@@ -2,18 +2,24 @@ import React from 'react';
 import './Results.scss';
 import Article from './Article.js';
 
-function Results({results}) {
+function Results(props) {
   return(
     <div className="results-main">
       <span className="results-title">Results</span>
       <div className="results-container">
-      {!results 
+        {props.results === undefined || props.results.length === 0
         ? <></>
-        : results.map(movie => {
-        return(
-          <Article key={movie.imdbID} movie={movie}/>
-        );
-      })}
+        : props.results.map(movie => {
+            return(
+              <Article 
+                key={movie.imdbID} 
+                movie={movie}
+                nominations={props.nominations}
+                setNominations={props.setNominations}
+              />
+            );
+          })
+        }
       </div>
     </div>
   );

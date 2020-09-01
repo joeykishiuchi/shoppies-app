@@ -2,11 +2,13 @@ import React, {useState, useEffect} from 'react';
 import './App.scss';
 import SearchBar from './SearchBar.js';
 import Results from './Results.js';
+import Nominations from './Nominations.js';
 import axios from 'axios';
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
   const [results, setResults] = useState([]);
+  const [nominations, setNominations] = useState([])
 
   useEffect(() => {
     axios({
@@ -19,7 +21,6 @@ function App() {
       }
     })
     .then(res => {
-      console.log(res.data.Search);
       setResults(res.data.Search);
     })
   },[searchTerm]);
@@ -28,7 +29,8 @@ function App() {
     <div className="App">
       <h1 className="main-header">The Shoppies</h1>
       <SearchBar onSearch={term => setSearchTerm(term)}/>
-      <Results results={results}/>
+      <Results results={results} nominations={nominations} setNominations={setNominations}/>
+      <Nominations nominations={nominations}/>
     </div>
   );
 }
