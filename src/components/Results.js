@@ -1,15 +1,18 @@
 import React from 'react';
+import './Results.scss';
+import Article from './Article.js';
 
 function Results({results}) {
-
   return(
-    <div>
-      <h3>Results</h3>
+    <div className="results-main">
+      <span className="results-title">Results</span>
+      <div className="results-container">
       {results.map(movie => {
         return(
-          <li>{movie.Title}</li>
+          <Article movie={movie}/>
         );
       })}
+      </div>
     </div>
   );
 };

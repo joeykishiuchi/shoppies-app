@@ -16,6 +16,7 @@ function App() {
       }
     })
     .then(res => {
+      console.log(res.data.Search);
       setResults(res.data.Search);
     })
   },[]);
