@@ -2,21 +2,27 @@ $main-font: 'Roboto', sans-serif;
 $green: #004c3f;
 $offwhite: #fbf7ed;
 $grey-font: #42474c;
+$main-backround-color: #f3fcf4;
 
 .search-container {
   .search-bar--form {
     .search-field {
       outline: none;
-      border: 1px solid #b5b5b5;
-      width: 45em;
-      height: 3.5em;
+      border: none;
+      border-bottom: 1px solid #b5b5b5;
+      width: 30em;
+      height: 2em;
       padding-left: 2em;
-      border-radius: 5em;
       font-family: $main-font;
-      font-weight: 500;
-      font-size: 1em;
+      font-weight: 300;
+      font-size: 1.5em;
       color: $grey-font;
       letter-spacing: 0.05em;
+      background-color: $main-backround-color;
+      background-image: url('/images/search-icon.svg');
+      background-repeat: no-repeat;
+      background-size: 1em;
+      background-position: center left;
     }
   }
 }
