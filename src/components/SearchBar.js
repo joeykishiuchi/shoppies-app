@@ -20,6 +20,7 @@ function SearchBar(props) {
         autoComplete="off"
       >
         <input
+          autoFocus
           className='search-field'
           placeholder="Search Movies"
           onChange={event => setSearchTerm(event.target.value)}

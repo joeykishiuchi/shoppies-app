@@ -1,9 +1,9 @@
 $main-font: 'Roboto', sans-serif;
 $green: #004c3f;
+$secondary-font: #388161;
 $offwhite: #fbf7ed;
 
 .nominations-main {
-  background-color: $green;
   padding: 1em;
   width: 30vw;
   height: 30em;
@@ -16,8 +16,8 @@ $offwhite: #fbf7ed;
   .nominations-title {
     font-family: $main-font;
     font-size: 1.5em;
-    font-weight: 300;
-    color: white;
+    font-weight: 500;
+    color: $green;
     text-align: start;
     letter-spacing: 0.05em;
     width: 90%;

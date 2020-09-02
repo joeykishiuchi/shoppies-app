@@ -6,7 +6,7 @@ function Nominations(props) {
 
   return (
     <div className="nominations-main">
-      <span className="nominations-title">Nominations</span>
+      <span className="nominations-title">Your Nominations</span>
       <ul className="nominations-container">
         {props.nominations === undefined || props.nominations.length === 0
           ? <></>
