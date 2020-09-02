@@ -50,7 +50,7 @@ function App() {
 
   // Checks if user had chosen all 5 nominations
   useEffect(() => {
-    setPopup(!(nominations === undefined) && nominations.length === 1)
+    setPopup(!(nominations === undefined) && nominations.length === 5)
   },[nominations]);
 
   function submitNominations() {
@@ -62,13 +62,12 @@ function App() {
   return (
     <div className="App">
       {mode === 'SHOW' && (
-        <Popup 
+        <Popup
           modal
           open={popup}
           contentStyle={popupStyles}
-          onclose={() => setPopup(false)}
+          onClose={() => setPopup(false)}
         >
-
           <div className="popup-header">
             <span className="popup-title">You have nominated 5 movies!</span>
           </div>

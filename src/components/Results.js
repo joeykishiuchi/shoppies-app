@@ -4,11 +4,6 @@ import ResultArticle from './ResultArticle.js';
 import { CircularProgress } from '@material-ui/core';
 
 function Results(props) {
-
-  useEffect(() => {
-    console.log(props.mode);
-  }, [props.mode])
-
   const resultsList = (
     <ul className="results-list">
         {props.results === undefined || props.results.length === 0
