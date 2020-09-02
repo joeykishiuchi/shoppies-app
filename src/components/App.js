@@ -27,7 +27,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className="main-header">The Shoppies</h1>
+      <h1 className="main-header"><span className="color-change">The</span> Shoppies</h1>
       <SearchBar onSearch={term => setSearchTerm(term)}/>
       <div className="main-container">
         <Results 

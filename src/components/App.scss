@@ -1,5 +1,6 @@
 $main-font: 'Roboto', sans-serif;
 $green: #004c3f;
+$secondary-font: #388161;
 $offwhite: #fbf7ed;
 $grey-font: #42474c;
 
@@ -11,8 +12,13 @@ $grey-font: #42474c;
 
   .main-header {
     font-family: $main-font;
-    color: $grey-font;
+    font-size: 3em;
+    color: $green;
     margin-top: 0;
+
+    .color-change {
+      color: $secondary-font;
+    }
   }
 
   .main-container {
