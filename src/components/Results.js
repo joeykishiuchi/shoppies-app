@@ -25,9 +25,9 @@ function Results(props) {
 
   return (
     <div className="results-main">
-      <span className="results-title">Results</span>
+      <span className="results-title">Movies</span>
       <div className='results-display'>
-        {props.mode === 'EMPTY' && <span>EMPTY</span>}
+        {props.mode === 'EMPTY' && <span className="search-results-placeholder">Search Results</span>}
         {props.mode === 'SHOW' && resultsList}
         {props.mode === 'LOADING' && <CircularProgress color='inherit' size='4em' />}
       </div>
