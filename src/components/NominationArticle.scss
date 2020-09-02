@@ -2,20 +2,23 @@ $main-font: 'Roboto', sans-serif;
 
 .nomination-container {
   list-style-type: none;
+  width: 90%;
   display: flex;
   justify-content: space-between;
   padding: 0.5em;
-  border: 1px solid black;
+  border-top: 1px solid white;
 
   .nomination-description {
     display: flex;
     flex-direction: column;
-
+    font-size: 0.9em;
+    text-align: start;
+    color: white;
+    letter-spacing: 0.05em;
 
     .nomination-title {
       font-family: $main-font;
       font-weight: 300;
-
     }
   
     .nomination-year {
@@ -24,7 +27,11 @@ $main-font: 'Roboto', sans-serif;
     }
   }
 
-  .remove-nomination {
-    
+  .MuiButtonBase-root {
+    background-color: #960f0f;
+
+    &:hover {
+      background-color: #993c3c;
+    }
   }
 }
