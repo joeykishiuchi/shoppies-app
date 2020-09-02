@@ -10,6 +10,32 @@ $grey-font: #42474c;
   text-align: center;
   padding-top: 1em;
 
+  .popup-content {
+
+    .popup-header {
+      background-color: $secondary-green;
+      border-top-right-radius: 0.5em;
+      border-top-left-radius: 0.5em;
+      height: 25%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .popup-title {
+        font-family: $main-font;
+        color: white;
+        font-weight: 300;
+        font-size: 2.5vw;
+      }
+    }
+
+    .popup-article {
+      font-family: $main-font;
+      color: $grey-font;
+      margin-top: 1em;
+    }
+  }
+
   .main-header {
     font-family: $main-font;
     font-size: 3em;

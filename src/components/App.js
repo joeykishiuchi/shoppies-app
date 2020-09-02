@@ -3,7 +3,17 @@ import './App.scss';
 import SearchBar from './SearchBar.js';
 import Results from './Results.js';
 import Nominations from './Nominations.js';
+import Popup from "reactjs-popup";
 import axios from 'axios';
+import {Button} from '@material-ui/core';
+
+const popupStyles = {
+  'backgroundColor':'white',
+  'border': 'none',
+  'height': '15em',
+  'border-radius': '0.5em',
+  'padding': 0
+}
 
 function App() {
   // Various visual modes
@@ -35,8 +45,26 @@ function App() {
     })
   },[searchTerm]);
 
+  // Checks if user had chosen all 5 nominations
+  const isNominationsFull = () => {
+    return !(nominations === undefined) && nominations.length === 5;
+  };
+
   return (
     <div className="App">
+      {mode === 'SHOW' && (
+        <Popup 
+          modal
+          open={isNominationsFull()}
+          contentStyle={popupStyles}
+        >
+
+          <div className="popup-header">
+            <span className="popup-title">You have nominated 5 movies!</span>
+          </div>
+          <article className="popup-article">You can edit your choices or submit your nominations.</article>
+        </Popup>
+      )}
       <h1 className="main-header"><span className="color-change">The</span> Shoppies</h1>
       <SearchBar onSearch={term => setSearchTerm(term)}/>
       <div className="main-container">
