@@ -5,6 +5,7 @@ $main-font: 'Roboto', sans-serif;
   width: 90%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0.5em;
   border-top: 1px solid white;
 
@@ -27,11 +28,12 @@ $main-font: 'Roboto', sans-serif;
     }
   }
 
-  .MuiButtonBase-root {
-    background-color: #960f0f;
+  .MuiSvgIcon-root {
+    color: #960f0f;
+    cursor: pointer;
 
     &:hover {
-      background-color: #993c3c;
+      color: #993c3c;
     }
   }
 }

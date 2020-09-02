@@ -1,6 +1,6 @@
 import React from 'react';
 import './NominationArticle.scss';
-import {Button} from '@material-ui/core';
+import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 
 function NominationArticle(props) {
 
@@ -16,11 +16,9 @@ function NominationArticle(props) {
         <span className="nomination-title">{props.movie.Title}</span>
         <span className="nomination-year">{props.movie.Year}</span>
       </div>
-      <Button 
-        variant="contained" 
-        color="primary"
+      <HighlightOffIcon
         onClick={() => removeNomination(props.nominations, props.movie)}
-      >Remove</Button>
+      >Remove</HighlightOffIcon>
     </li>
   );
 };
