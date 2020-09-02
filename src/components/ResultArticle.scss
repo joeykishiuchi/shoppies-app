@@ -32,6 +32,10 @@ $main-font: 'Roboto', sans-serif;
   .MuiButtonBase-root {
     margin-left: auto;
     background-color: #dba709;
+    width: 9em;
+    height: 3em;
+    border-radius: 5em;
+    box-shadow: 0 0 0.3em #dba709;
 
     &:hover {
       background-color: #f0c543;
