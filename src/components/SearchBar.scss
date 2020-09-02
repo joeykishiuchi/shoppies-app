@@ -1,8 +1,22 @@
+$main-font: 'Roboto', sans-serif;
+$green: #004c3f;
+$offwhite: #fbf7ed;
+$grey-font: #42474c;
+
 .search-container {
   .search-bar--form {
-    .MuiInputBase-input {
-      padding: 0.5em;
-      width: 20em;      
+    .search-field {
+      outline: none;
+      border: none;
+      width: 45em;
+      height: 3.5em;
+      padding-left: 2em;
+      border-radius: 5em;
+      font-family: $main-font;
+      font-weight: 500;
+      font-size: 1em;
+      color: $grey-font;
+      letter-spacing: 0.05em;
     }
   }
 }
