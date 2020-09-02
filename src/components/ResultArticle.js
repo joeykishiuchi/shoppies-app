@@ -29,7 +29,7 @@ function ResultArticle(props) {
       <Button 
         variant="contained" 
         color="primary"
-        onClick={() => {props.setNominations(nominations => [...nominations, props.movie])}}
+        onClick={() => props.setNominations(nominations => [...nominations, props.movie])}
         disabled={isMovieNominated(props.nominations, props.movie)}
       >Nominate</Button>
     </li>

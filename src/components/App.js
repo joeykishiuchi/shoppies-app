@@ -10,11 +10,10 @@ function App() {
   const EMPTY = 'EMPTY';
   const SHOW = 'SHOW';
   const LOADING = 'LOADING';
-  const ERROR = 'ERROR';
 
   const [searchTerm, setSearchTerm] = useState('');
   const [results, setResults] = useState([]);
-  const [nominations, setNominations] = useState([])
+  const [nominations, setNominations] = useState([]);
 
   // Current mode of results
   const [mode, setMode] = useState(EMPTY)
