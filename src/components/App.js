@@ -6,11 +6,21 @@ import Nominations from './Nominations.js';
 import axios from 'axios';
 
 function App() {
+  // Various visual modes
+  const EMPTY = 'EMPTY';
+  const SHOW = 'SHOW';
+  const LOADING = 'LOADING';
+  const ERROR = 'ERROR';
+
   const [searchTerm, setSearchTerm] = useState('');
   const [results, setResults] = useState([]);
   const [nominations, setNominations] = useState([])
 
+  // Current mode of results
+  const [mode, setMode] = useState(EMPTY)
+
   useEffect(() => {
+    setMode(LOADING)
     axios({
       method: 'GET',
       url: `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}`,
@@ -22,6 +32,7 @@ function App() {
     })
     .then(res => {
       setResults(res.data.Search);
+      res.data.Search === undefined || res.data.Search.length === 0 ? setMode(EMPTY) : setMode(SHOW)
     })
   },[searchTerm]);
 
@@ -34,6 +45,7 @@ function App() {
           results={results}
           nominations={nominations}
           setNominations={setNominations}
+          mode={mode}
         />
         <Nominations
           nominations={nominations}
