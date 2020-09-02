@@ -28,6 +28,9 @@ function App() {
   // Current mode of results
   const [mode, setMode] = useState(EMPTY)
 
+  // Toggles modal activity
+  const [popup, setPopup] = useState(false);
+
   useEffect(() => {
     setMode(LOADING)
     axios({
@@ -46,8 +49,14 @@ function App() {
   },[searchTerm]);
 
   // Checks if user had chosen all 5 nominations
-  const isNominationsFull = () => {
-    return !(nominations === undefined) && nominations.length === 5;
+  useEffect(() => {
+    setPopup(!(nominations === undefined) && nominations.length === 1)
+  },[nominations]);
+
+  function submitNominations() {
+    setNominations([]);
+    setSearchTerm('');
+    setResults([]);
   };
 
   return (
@@ -55,14 +64,17 @@ function App() {
       {mode === 'SHOW' && (
         <Popup 
           modal
-          open={isNominationsFull()}
+          open={popup}
           contentStyle={popupStyles}
+          onclose={() => setPopup(false)}
         >
 
           <div className="popup-header">
             <span className="popup-title">You have nominated 5 movies!</span>
           </div>
           <article className="popup-article">You can edit your choices or submit your nominations.</article>
+          <Button onClick={() => setPopup(false)}>Continue Editing</Button>
+          <Button onClick={() => submitNominations()}>Submit</Button>
         </Popup>
       )}
       <h1 className="main-header"><span className="color-change">The</span> Shoppies</h1>
