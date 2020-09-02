@@ -35,10 +35,11 @@ $main-font: 'Roboto', sans-serif;
     width: 9em;
     height: 3em;
     border-radius: 5em;
-    box-shadow: 0 0 0.3em #dba709;
+    box-shadow: 0 0;
 
     &:hover {
       background-color: #f0c543;
+      box-shadow: 0 0;
     }
   }
 }
