@@ -7,7 +7,7 @@ $grey-font: #42474c;
   .search-bar--form {
     .search-field {
       outline: none;
-      border: none;
+      border: 1px solid #b5b5b5;
       width: 45em;
       height: 3.5em;
       padding-left: 2em;
