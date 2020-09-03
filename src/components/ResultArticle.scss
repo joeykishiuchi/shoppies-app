@@ -6,6 +6,7 @@ $main-font: 'Roboto', sans-serif;
   flex-direction: row;
   padding: 1em;
   width: 90%;
+  height: 4.5em;
 
   .article-poster {
     width: 3em;
@@ -18,6 +19,7 @@ $main-font: 'Roboto', sans-serif;
     margin-left: 1em;
     color: white;
     letter-spacing: 0.05em;
+    width: 20em;
 
     .article-title {
       font-family: $main-font;
