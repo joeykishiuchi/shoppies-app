@@ -3,18 +3,9 @@ import './App.scss';
 import SearchBar from './SearchBar.js';
 import Results from './Results.js';
 import Nominations from './Nominations.js';
-import Popup from "reactjs-popup";
 import axios from 'axios';
-import {Button} from '@material-ui/core';
 import useDebounce from '../hooks/useDebounce.js'
-
-const popupStyles = {
-  'backgroundColor':'white',
-  'border': 'none',
-  'height': '15em',
-  'border-radius': '0.5em',
-  'padding': 0
-}
+import Banner from './Banner.js';
 
 function App() {
   // Various visual modes
@@ -75,21 +66,11 @@ function App() {
 
   return (
     <div className="App">
-      <Popup
-        modal
-        open={popup}
-        contentStyle={popupStyles}
-        onClose={closePopup}
-      >
-        <div className="popup-header">
-          <span className="popup-title">You have nominated 5 movies!</span>
-        </div>
-        <article className="popup-article">You can edit your choices or submit your nominations.</article>
-        <div className="popup-buttons">
-          <Button className="edit-button" onClick={closePopup}>Continue Editing</Button>
-          <Button className="submit-button" onClick={handleSubmit}>Submit</Button>
-        </div>
-      </Popup>
+      <Banner 
+        popup={popup}
+        closePopup={closePopup}
+        handleSubmit={handleSubmit}
+      />
       <h1 className="main-header"><span className="color-change">The</span> Shoppies</h1>
       <SearchBar inputValue={inputValue} setInputValue={setInputValue}/>
       <div className="main-container">

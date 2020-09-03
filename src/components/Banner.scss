@@ -1,0 +1,68 @@
+$main-font: 'Roboto', sans-serif;
+$secondary-green: #388161;
+$grey-font: #42474c;
+
+.popup-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .popup-header {
+    background-color: $secondary-green;
+    border-top-right-radius: 0.5em;
+    border-top-left-radius: 0.5em;
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .popup-title {
+      font-family: $main-font;
+      color: white;
+      font-weight: 300;
+      font-size: 2.5vw;
+    }
+  }
+
+  .popup-article {
+    font-family: $main-font;
+    font-size: 1.7vw;
+    color: $grey-font;
+    margin: 1em 0;
+  }
+
+  .popup-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 2em;
+    height: 3em;
+
+    .edit-button {
+      font-family: $main-font;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      width: 35%;
+      background-color: $secondary-green;
+      border-radius: 4em;
+      color: white;
+
+      &:hover {
+        background-color: #409972;
+      }
+    }
+
+    .submit-button {
+      font-family: $main-font;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      width: 35%;
+      background-color: $secondary-green;
+      border-radius: 4em;
+      color: white;
+
+      &:hover {
+        background-color: #409972;
+      }
+    }
+  }
+}
