@@ -72,8 +72,10 @@ function App() {
             <span className="popup-title">You have nominated 5 movies!</span>
           </div>
           <article className="popup-article">You can edit your choices or submit your nominations.</article>
-          <Button onClick={() => setPopup(false)}>Continue Editing</Button>
-          <Button onClick={() => submitNominations()}>Submit</Button>
+          <div className="popup-buttons">
+            <Button className="edit-button" onClick={() => setPopup(false)}>Continue Editing</Button>
+            <Button className="submit-button" onClick={() => submitNominations()}>Submit</Button>
+          </div>
         </Popup>
       )}
       <h1 className="main-header"><span className="color-change">The</span> Shoppies</h1>
