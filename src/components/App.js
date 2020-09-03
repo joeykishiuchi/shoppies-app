@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import './App.scss';
 import SearchBar from './SearchBar.js';
 import Results from './Results.js';
@@ -6,6 +6,7 @@ import Nominations from './Nominations.js';
 import Popup from "reactjs-popup";
 import axios from 'axios';
 import {Button} from '@material-ui/core';
+import useDebounce from '../hooks/useDebounce.js'
 
 const popupStyles = {
   'backgroundColor':'white',
@@ -21,7 +22,12 @@ function App() {
   const SHOW = 'SHOW';
   const LOADING = 'LOADING';
 
-  const [searchTerm, setSearchTerm] = useState('');
+  //Search states
+  const [inputValue, setInputValue] = useState('');
+  const [searchTerm, setSearchTerm] = useState(inputValue);
+  const term = useDebounce(inputValue, 300);
+  const onSearch = useCallback(setSearchTerm, [searchTerm])
+
   const [results, setResults] = useState([]);
   const [nominations, setNominations] = useState([]);
 
@@ -31,6 +37,12 @@ function App() {
   // Toggles modal activity
   const [popup, setPopup] = useState(false);
 
+  //Sets term to be passed to api after debouce
+  useEffect(() => {
+    setSearchTerm(term);
+  }, [term, onSearch])
+
+  // Calls OMDb api off search
   useEffect(() => {
     setMode(LOADING)
     axios({
@@ -53,9 +65,11 @@ function App() {
     setPopup(!(nominations === undefined) && nominations.length === 5)
   },[nominations]);
 
-  function submitNominations() {
+  const closePopup = () => setPopup(false);
+
+  const handleSubmit = () => {
     setNominations([]);
-    setSearchTerm('');
+    setInputValue('');
     setResults([]);
   };
 
@@ -66,20 +80,20 @@ function App() {
           modal
           open={popup}
           contentStyle={popupStyles}
-          onClose={() => setPopup(false)}
+          onClose={closePopup}
         >
           <div className="popup-header">
             <span className="popup-title">You have nominated 5 movies!</span>
           </div>
           <article className="popup-article">You can edit your choices or submit your nominations.</article>
           <div className="popup-buttons">
-            <Button className="edit-button" onClick={() => setPopup(false)}>Continue Editing</Button>
-            <Button className="submit-button" onClick={() => submitNominations()}>Submit</Button>
+            <Button className="edit-button" onClick={closePopup}>Continue Editing</Button>
+            <Button className="submit-button" onClick={handleSubmit}>Submit</Button>
           </div>
         </Popup>
       )}
       <h1 className="main-header"><span className="color-change">The</span> Shoppies</h1>
-      <SearchBar onSearch={term => setSearchTerm(term)}/>
+      <SearchBar inputValue={inputValue} setInputValue={setInputValue}/>
       <div className="main-container">
         <Results 
           results={results}

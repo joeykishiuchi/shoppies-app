@@ -1,16 +1,10 @@
-import React, {useState, useEffect, useCallback} from 'react';
+import React from 'react';
 import './SearchBar.scss';
-import useDebounce from '../hooks/useDebounce.js'
+
 
 function SearchBar(props) {
-  const [searchTerm, setSearchTerm] = useState('');
-  const term = useDebounce(searchTerm, 300)
 
-  const onSearch = useCallback(props.onSearch, [searchTerm])
-
-  useEffect(() => {
-    onSearch(term);
-  }, [term, onSearch])
+  const handleInput = event => props.setInputValue(event.target.value);
 
   return (
     <div className="search-container">
@@ -20,10 +14,10 @@ function SearchBar(props) {
         autoComplete="off"
       >
         <input
-          autoFocus
           className='search-field'
           placeholder="Search Movies"
-          onChange={event => setSearchTerm(event.target.value)}
+          value={props.inputValue}
+          onChange={handleInput}
         />
       </form>
     </div>
