@@ -75,23 +75,21 @@ function App() {
 
   return (
     <div className="App">
-      {mode === 'SHOW' && (
-        <Popup
-          modal
-          open={popup}
-          contentStyle={popupStyles}
-          onClose={closePopup}
-        >
-          <div className="popup-header">
-            <span className="popup-title">You have nominated 5 movies!</span>
-          </div>
-          <article className="popup-article">You can edit your choices or submit your nominations.</article>
-          <div className="popup-buttons">
-            <Button className="edit-button" onClick={closePopup}>Continue Editing</Button>
-            <Button className="submit-button" onClick={handleSubmit}>Submit</Button>
-          </div>
-        </Popup>
-      )}
+      <Popup
+        modal
+        open={popup}
+        contentStyle={popupStyles}
+        onClose={closePopup}
+      >
+        <div className="popup-header">
+          <span className="popup-title">You have nominated 5 movies!</span>
+        </div>
+        <article className="popup-article">You can edit your choices or submit your nominations.</article>
+        <div className="popup-buttons">
+          <Button className="edit-button" onClick={closePopup}>Continue Editing</Button>
+          <Button className="submit-button" onClick={handleSubmit}>Submit</Button>
+        </div>
+      </Popup>
       <h1 className="main-header"><span className="color-change">The</span> Shoppies</h1>
       <SearchBar inputValue={inputValue} setInputValue={setInputValue}/>
       <div className="main-container">
