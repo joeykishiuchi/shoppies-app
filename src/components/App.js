@@ -29,7 +29,10 @@ function App() {
   const [mode, setMode] = useState(EMPTY)
 
   // Toggles modal activity
-  const [popup, setPopup] = useState(false);
+  const [popup, setPopup] = useState({
+    isActive: false,
+    isSubmitted: false
+  });
 
   //Sets term to be passed to api after debouce
   useEffect(() => {
@@ -56,15 +59,24 @@ function App() {
 
   // Checks if user had chosen all 5 nominations
   useEffect(() => {
-    setPopup(!(nominations === undefined) && nominations.length === 5)
+    if(!popup.isActive) {
+      setPopup({
+        ...popup,
+        isActive: !(nominations === undefined) && nominations.length === 5
+      })
+    }
   },[nominations]);
 
-  const closePopup = () => setPopup(false);
+  const closePopup = () => setPopup({ isActive: false, isSubmitted: false });
 
   const handleSubmit = () => {
     setNominations([]);
     setInputValue('');
     setResults([]);
+    setPopup({
+      ...popup,
+      isSubmitted: true
+    })
     localStorage.clear();
   };
 
