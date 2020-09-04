@@ -20,7 +20,10 @@ function App() {
   const onSearch = useCallback(setSearchTerm, [searchTerm])
 
   const [results, setResults] = useState([]);
-  const [nominations, setNominations] = useState([]);
+
+  //Persists users nominations beyond refresh
+  const session = JSON.parse(localStorage.getItem('nominations'))
+  const [nominations, setNominations] = useState(session || []);
 
   // Current mode of results
   const [mode, setMode] = useState(EMPTY)
@@ -62,6 +65,7 @@ function App() {
     setNominations([]);
     setInputValue('');
     setResults([]);
+    localStorage.clear();
   };
 
   return (

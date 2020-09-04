@@ -19,6 +19,11 @@ function ResultArticle(props) {
     return nominated;
   };
 
+  const saveNomination = () => {
+    props.setNominations(nominations => [...nominations, props.movie])
+    localStorage.setItem('nominations', JSON.stringify([...props.nominations, props.movie]))
+  };
+
   return(
     <li className="article-container">
       <img 
@@ -34,7 +39,7 @@ function ResultArticle(props) {
       <Button 
         variant="contained" 
         color="primary"
-        onClick={() => props.setNominations(nominations => [...nominations, props.movie])}
+        onClick={saveNomination}
         disabled={isMovieNominated(props.nominations, props.movie)}
       >Nominate</Button>
     </li>
