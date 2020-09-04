@@ -56,17 +56,7 @@ function App() {
       res.data.Search === undefined || res.data.Search.length === 0 ? setMode(EMPTY) : setMode(SHOW)
     })
   },[searchTerm]);
-
-  // Checks if user had chosen all 5 nominations
-  useEffect(() => {
-    if(!popup.isActive) {
-      setPopup({
-        ...popup,
-        isActive: !(nominations === undefined) && nominations.length === 5
-      })
-    }
-  },[nominations, popup]);
-
+  
   const closePopup = () => setPopup({ isActive: false, isSubmitted: false });
 
   const handleSubmit = () => {
@@ -97,6 +87,8 @@ function App() {
           mode={mode}
         />
         <Nominations
+          popup={popup}
+          setPopup={setPopup}
           nominations={nominations}
           setNominations={setNominations}
           />

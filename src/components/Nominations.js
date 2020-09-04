@@ -12,6 +12,7 @@ function Nominations(props) {
     } else if ((5 - props.nominations.length) === 1) {
       return '1 Choice Left';
     } else {
+      props.setPopup({...props.popup, isActive: true})
       return 'No Choices Left'
     }
   };
