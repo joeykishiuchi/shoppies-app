@@ -10,11 +10,11 @@ function ResultArticle(props) {
       // Movies cannot be nominated if their are 5 in the list
       return true;
     } else {
-      nominations.map(nomination => {
-        if (nomination.Title === movie.Title) {
-          nominated = true;
-        }
-      })
+      nominations.map(nomination => (
+        nomination.Title === movie.Title
+        ? nominated = true
+        : null
+      ))
     }
     return nominated;
   };

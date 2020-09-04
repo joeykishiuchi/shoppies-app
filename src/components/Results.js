@@ -1,9 +1,10 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import './Results.scss';
 import ResultArticle from './ResultArticle.js';
 import { CircularProgress } from '@material-ui/core';
 
 function Results(props) {
+  
   const resultsList = (
     <ul className="results-list">
         {props.results === undefined || props.results.length === 0

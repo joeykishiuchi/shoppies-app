@@ -65,7 +65,7 @@ function App() {
         isActive: !(nominations === undefined) && nominations.length === 5
       })
     }
-  },[nominations]);
+  },[nominations, popup]);
 
   const closePopup = () => setPopup({ isActive: false, isSubmitted: false });
 

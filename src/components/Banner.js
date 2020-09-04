@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import './Banner.scss';
 import {Button} from '@material-ui/core';
 import Popup from "reactjs-popup";
