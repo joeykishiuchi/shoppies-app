@@ -6,6 +6,7 @@ $grey-font: #42474c;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
 
   .submit-message {
     font-family: $main-font;
@@ -18,6 +19,7 @@ $grey-font: #42474c;
     background-color: $secondary-green;
     border-top-right-radius: 0.5em;
     border-top-left-radius: 0.5em;
+    width: 100%;
     height: 25%;
     display: flex;
     justify-content: center;
@@ -28,12 +30,15 @@ $grey-font: #42474c;
       color: white;
       font-weight: 300;
       font-size: 2.5vw;
+      letter-spacing: 0.1em;
     }
   }
 
   .popup-article {
+    width: 90%;
     font-family: $main-font;
-    font-size: 1.7vw;
+    font-size: 2vw;
+    font-weight: 300;
     color: $grey-font;
     margin: 1em 0;
   }
@@ -42,6 +47,7 @@ $grey-font: #42474c;
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 2em;
+    width: 100%;
     height: 3em;
 
     .custom-button {
