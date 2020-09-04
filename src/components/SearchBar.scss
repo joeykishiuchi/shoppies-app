@@ -5,13 +5,14 @@ $grey-font: #42474c;
 $main-backround-color: #f3fcf4;
 
 .search-container {
+  height: 8vh;
   .search-bar--form {
     .search-field {
       outline: none;
       border: none;
       border-bottom: 1px solid #b5b5b5;
       width: 60%;
-      height: 2em;
+      height: 100%;
       padding-left: 2em;
       font-family: $main-font;
       font-weight: 300;
