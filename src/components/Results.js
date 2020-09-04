@@ -26,8 +26,11 @@ function Results(props) {
 
   return (
     <div className="results-main">
-      <span className="results-title">Movies</span>
-      <div className='results-display'>
+      <div className="results-header">
+        <span className="results-title">Results</span>
+        {props.inputValue !== '' && <span className="results-term">for: {props.inputValue}</span>}
+      </div>
+      <div className="results-display">
         {props.mode === 'EMPTY' && <span className="search-results-placeholder">Search Results</span>}
         {props.mode === 'SHOW' && resultsList}
         {props.mode === 'LOADING' && <CircularProgress color='inherit' size='4em' />}
