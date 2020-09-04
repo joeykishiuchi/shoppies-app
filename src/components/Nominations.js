@@ -1,8 +1,14 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import NominationArticle from './NominationArticle.js';
 import './Nominations.scss';
 
 function Nominations(props) {
+
+  useEffect(() => {
+    if(props.nominations === undefined || props.nominations.length === 5) {
+      props.setPopup({...props.popup, isActive: true});
+    }
+  },[props.nominations]);
 
   const getNominationCount = () => {
     if (props.nominations === undefined || props.nominations.length === 0) {
@@ -12,7 +18,6 @@ function Nominations(props) {
     } else if ((5 - props.nominations.length) === 1) {
       return '1 Choice Left';
     } else {
-      props.setPopup({...props.popup, isActive: true})
       return 'No Choices Left'
     }
   };

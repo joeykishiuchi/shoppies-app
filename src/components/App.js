@@ -26,7 +26,7 @@ function App() {
   const [nominations, setNominations] = useState(session || []);
 
   // Current mode of results
-  const [mode, setMode] = useState(EMPTY)
+  const [mode, setMode] = useState(EMPTY);
 
   // Toggles modal activity
   const [popup, setPopup] = useState({
