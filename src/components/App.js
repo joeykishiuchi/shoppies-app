@@ -84,6 +84,7 @@ function App() {
           results={results}
           nominations={nominations}
           setNominations={setNominations}
+          inputValue={inputValue}
           mode={mode}
         />
         <Nominations
