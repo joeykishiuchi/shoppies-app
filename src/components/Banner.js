@@ -13,13 +13,14 @@ const popupStyles = {
 
 function Banner(props) {
 
-  useEffect(() => {
-    console.log(props.popup);
-  },[props.popup])
-
   const display = (props.popup.isSubmitted 
     ? (
-      <div>Thank You</div>
+      <>
+        <div className="submit-message">Thank you for your submission!</div>
+        <div className="popup-buttons">
+          <Button className="custom-button" onClick={props.closePopup}>Close</Button>
+        </div>
+      </>
     )
     : (
       <>
@@ -28,8 +29,8 @@ function Banner(props) {
         </div>
         <article className="popup-article">You can edit your choices or submit your nominations.</article>
         <div className="popup-buttons">
-          <Button className="edit-button" onClick={props.closePopup}>Continue Editing</Button>
-          <Button className="submit-button" onClick={props.handleSubmit}>Submit</Button>
+          <Button className="custom-button" onClick={props.closePopup}>Continue Editing</Button>
+          <Button className="custom-button" onClick={props.handleSubmit}>Submit</Button>
         </div>
       </>
     )

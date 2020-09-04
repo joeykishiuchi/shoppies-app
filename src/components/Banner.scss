@@ -7,6 +7,13 @@ $grey-font: #42474c;
   flex-direction: column;
   justify-content: space-between;
 
+  .submit-message {
+    font-family: $main-font;
+    font-size: 1.5em;
+    color: $grey-font;
+    margin-top: 3em;
+  }
+
   .popup-header {
     background-color: $secondary-green;
     border-top-right-radius: 0.5em;
@@ -37,21 +44,7 @@ $grey-font: #42474c;
     margin-bottom: 2em;
     height: 3em;
 
-    .edit-button {
-      font-family: $main-font;
-      font-weight: 300;
-      letter-spacing: 0.1em;
-      width: 35%;
-      background-color: $secondary-green;
-      border-radius: 4em;
-      color: white;
-
-      &:hover {
-        background-color: #409972;
-      }
-    }
-
-    .submit-button {
+    .custom-button {
       font-family: $main-font;
       font-weight: 300;
       letter-spacing: 0.1em;
