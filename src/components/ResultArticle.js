@@ -11,7 +11,7 @@ function ResultArticle(props) {
       return true;
     } else {
       nominations.map(nomination => (
-        nomination.Title === movie.Title
+        nomination.imdbID === movie.imdbID
         ? nominated = true
         : null
       ))

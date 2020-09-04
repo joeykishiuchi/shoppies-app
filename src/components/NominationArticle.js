@@ -6,7 +6,7 @@ function NominationArticle(props) {
 
   const removeNomination = (nominations, movie) => {
     let newNominations = [];
-    newNominations = nominations.filter(nomination => nomination.Title !== movie.Title);
+    newNominations = nominations.filter(nomination => nomination.imdbID !== movie.imdbID);
     props.setNominations(newNominations);
   };
 
