@@ -3,15 +3,28 @@ $green: #004c3f;
 $secondary-font: #388161;
 $offwhite: #fbf7ed;
 
+$med-screen: 768px;
+
+@mixin med {
+  @media (max-width: #{$med-screen}) {
+    @content
+  }
+}
+
 .nominations-main {
   padding: 1em;
-  width: 30vw;
+  width: 30%;
   height: 30em;
   display: flex;
   border-radius: 1em;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @include med {
+    width: 100%;
+    padding: 0;
+  }
 
   .nominations-header {
     width: 90%;

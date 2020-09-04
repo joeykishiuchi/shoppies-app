@@ -2,15 +2,28 @@ $main-font: 'Roboto', sans-serif;
 $green: #004c3f;
 $secondary-font: #388161;
 
+$med-screen: 768px;
+
+@mixin med {
+  @media (max-width: #{$med-screen}) {
+    @content
+  }
+}
+
 .results-main {
   background-color: $secondary-font;
   box-shadow: 0 0 0.4em $secondary-font;
   padding: 1em;
-  width: 60vw;
+  width: 60%;
   height: 30em;
   display: flex;
   flex-direction: column;
   border-radius: 1em;
+
+  @include med {
+    width: 100%;
+    padding: 0;
+  }
 
   .results-title {
     font-family: $main-font;
