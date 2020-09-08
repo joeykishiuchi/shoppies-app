@@ -1,7 +1,5 @@
 $main-font: 'Roboto', sans-serif;
 $green: #004c3f;
-$secondary-font: #388161;
-$offwhite: #fbf7ed;
 
 $med-screen: 768px;
 
@@ -24,6 +22,7 @@ $med-screen: 768px;
   @include med {
     width: 100%;
     padding: 0;
+    padding-top: 1.5em;
   }
 
   .nominations-header {
