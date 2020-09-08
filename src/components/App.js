@@ -44,7 +44,7 @@ function App() {
     setMode(LOADING)
     axios({
       method: 'GET',
-      url: `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}`,
+      url: `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}`,
       params: {
         s: searchTerm,
         type: 'movie',
