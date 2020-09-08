@@ -42,6 +42,7 @@ function App() {
   // Calls OMDb api off search
   useEffect(() => {
     setMode(LOADING)
+    console.log("ENV:", process.env.REACT_APP_OMDB_API_KEY})
     axios({
       method: 'GET',
       url: `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}`,
