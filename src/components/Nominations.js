@@ -5,6 +5,7 @@ import './Nominations.scss';
 function Nominations(props) {
 
   useEffect(() => {
+    //toggle popup if 5 movies are nominationed
     if(props.nominations === undefined || props.nominations.length === 5) {
       props.setPopup({...props.popup, isActive: true});
     }

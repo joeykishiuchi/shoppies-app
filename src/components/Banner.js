@@ -12,7 +12,7 @@ const popupStyles = {
 }
 
 function Banner(props) {
-
+  // Displays thank you message upom submission
   const display = (props.popup.isSubmitted 
     ? (
       <>

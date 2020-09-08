@@ -8,7 +8,7 @@ import useDebounce from '../hooks/useDebounce.js'
 import Banner from './Banner.js';
 
 function App() {
-  // Various visual modes
+  // Various visual modes for Results component
   const EMPTY = 'EMPTY';
   const SHOW = 'SHOW';
   const LOADING = 'LOADING';

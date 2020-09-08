@@ -7,7 +7,7 @@ function ResultArticle(props) {
   const isMovieNominated = (nominations, movie) => {
     let nominated = false;
     if (nominations.length === 5) {
-      // Movies cannot be nominated if their are 5 in the list
+      // Disables nominate button if there are 5 movies already nominated
       return true;
     } else {
       nominations.map(nomination => (
